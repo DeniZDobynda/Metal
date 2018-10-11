@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xll-81-Ske">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HelloMetal2D" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -19,6 +22,90 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1799.2" y="289.20539730134936"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="y2n-o5-PjT">
+            <objects>
+                <viewController id="zi2-sB-vfj" customClass="MainViewController" customModule="HelloMetal2D" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3TT-Pt-6o9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="R9a-Is-vIe">
+                                <rect key="frame" x="16" y="64" width="349" height="157"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="F: F[Fz[zFZXFZYF]Z[ZFxzFyzF]F]" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0Kz-HU-h4s">
+                                        <rect key="frame" x="0.0" y="0.0" width="349" height="58"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="0Kz-HU-h4s" secondAttribute="height" multiplier="6:1" id="4er-b7-08o"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gUr-yT-QMd">
+                                        <rect key="frame" x="0.0" y="78" width="349" height="29"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 iterations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DNC-Mq-M9C">
+                                                <rect key="frame" x="0.0" y="0.0" width="235" height="29"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" maximumValue="6" translatesAutoresizingMaskIntoConstraints="NO" id="QtS-RT-JTu">
+                                                <rect key="frame" x="255" y="0.0" width="94" height="29"/>
+                                                <connections>
+                                                    <action selector="stepperChanged:" destination="zi2-sB-vfj" eventType="valueChanged" id="eFf-DT-9Um"/>
+                                                </connections>
+                                            </stepper>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jo4-uh-GHj">
+                                        <rect key="frame" x="0.0" y="127" width="349" height="30"/>
+                                        <state key="normal" title="Show"/>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="Show Render" id="FRd-a0-uhJ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="R9a-Is-vIe" firstAttribute="leading" secondItem="3TT-Pt-6o9" secondAttribute="leadingMargin" id="VYq-4L-hAY"/>
+                            <constraint firstItem="R9a-Is-vIe" firstAttribute="top" secondItem="acV-0G-HuD" secondAttribute="top" id="aeR-5s-V8e"/>
+                            <constraint firstItem="acV-0G-HuD" firstAttribute="trailing" secondItem="R9a-Is-vIe" secondAttribute="trailing" constant="10" id="uXZ-Md-T2u"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="acV-0G-HuD"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="BYO-0A-eCS"/>
+                    <connections>
+                        <outlet property="iterationsLabel" destination="DNC-Mq-M9C" id="1C4-cO-pXx"/>
+                        <outlet property="rulesView" destination="0Kz-HU-h4s" id="VXb-W2-Ll1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xDf-aF-T0i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="951.20000000000005" y="289.20539730134936"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="GZz-TV-rPn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xll-81-Ske" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4uI-Ns-B7o">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="zi2-sB-vfj" kind="relationship" relationship="rootViewController" id="6cT-xa-C6Z"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sPd-YZ-Fcm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="12" y="289.20539730134936"/>
         </scene>
     </scenes>
 </document>
